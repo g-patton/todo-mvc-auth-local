@@ -23,11 +23,20 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
 
 ---
 
-# Things to add
+- in MongoDB, create a database called 'todo' and a collection called 'todos'
+
+---
+
+# Things to add if using heroku for production
 
 - Create a `.env` file and add the following as `key: value` 
   - PORT: 2121 (can be any port example: 3000) 
   - DB_STRING: `your database URI` 
  ---
+
+ # if using a local host:
+- .env file must be set up as follows:
+  - PORT = num
+  - DB_STRING = 'mongodbclientstring'
 
 
