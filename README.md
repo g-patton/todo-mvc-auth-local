@@ -21,6 +21,8 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
 
 `npm install` 
 
+`npm start` to use nodemon in development
+
 ---
 
 - in MongoDB, create a database called 'todo' and a collection called 'todos'
