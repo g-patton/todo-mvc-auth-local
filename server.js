@@ -8,7 +8,7 @@ const flash = require('express-flash')
 const logger = require('morgan')
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
-const todoRoutes = require('./routes/todos')
+const attractionRoutes = require('./routes/attractions')
 
 require('dotenv').config({path: './config/.env'})
 
@@ -18,10 +18,15 @@ require('./config/passport')(passport)
 connectDB()
 
 app.set('view engine', 'ejs')
-app.use(express.static('public'))
+
+// the css file wasn't taking effect until I added '/public'
+app.use('/public', express.static('public'))
+// body parsing
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+// morgan
 app.use(logger('dev'))
+
 // Sessions
 app.use(
     session({
@@ -31,7 +36,7 @@ app.use(
       store: new MongoStore({ mongooseConnection: mongoose.connection }),
     })
   )
-  
+
 // Passport middleware
 app.use(passport.initialize())
 app.use(passport.session())
@@ -39,8 +44,8 @@ app.use(passport.session())
 app.use(flash())
   
 app.use('/', mainRoutes)
-app.use('/todos', todoRoutes)
- 
+app.use('/attractions', attractionRoutes)
+
 app.listen(process.env.PORT, ()=>{
-    console.log('Server is running, you better catch it!')
+  console.log(`The Las Vegas attraction server is running!`)
 })    

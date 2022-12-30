@@ -1,6 +1,8 @@
 # Introduction
 
-A Simple ToDo App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
+The project was built to take the hassle out of where to go in Las Vegas(can be changed to other cities) so that tourists can spend more time having fun and less time browsing the internet.
+Initially developed implementing the MVC Architecture and "authorization" so users can sign up and personalize their experience.  
+
 
 ---
 
